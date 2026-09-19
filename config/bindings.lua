@@ -61,6 +61,14 @@ local keys = {
    { key = 'c',          mods = 'CTRL|SHIFT',  action = act.CopyTo('Clipboard') },
    { key = 'v',          mods = 'CTRL|SHIFT',  action = act.PasteFrom('Clipboard') },
 
+   -- font size --
+   { key = '=',          mods = 'CTRL',        action = act.IncreaseFontSize },
+   { key = '+',          mods = 'CTRL',        action = act.IncreaseFontSize },
+   { key = '+',          mods = 'CTRL|SHIFT',  action = act.IncreaseFontSize },
+   { key = '-',          mods = 'CTRL',        action = act.DecreaseFontSize },
+   { key = '_',          mods = 'CTRL|SHIFT',  action = act.DecreaseFontSize },
+   { key = '0',          mods = 'CTRL',        action = act.ResetFontSize },
+
    -- tabs --
    -- tabs: spawn+close
    { key = 't',          mods = mod.SUPER,     action = act.SpawnTab('DefaultDomain') },
@@ -77,10 +85,11 @@ local keys = {
    { key = '0',          mods = mod.SUPER,     action = act.EmitEvent('tabs.manual-update-tab-title') },
    { key = '0',          mods = mod.SUPER_REV, action = act.EmitEvent('tabs.reset-tab-title') },
 
-   -- window: toggle title bar
-   { key = '8',          mods = mod.SUPER,     action = act.EmitEvent('window.toggle-title-bar') },
+	   -- window: toggle title bar
+	   { key = '8',          mods = mod.SUPER,     action = act.EmitEvent('window.toggle-title-bar') },
+	   { key = 'b',          mods = 'CTRL',        action = act.EmitEvent('window.toggle-title-bar') },
 
-   -- tab: hide tab-bar
+	   -- tab: hide tab-bar
    { key = '9',          mods = mod.SUPER,     action = act.EmitEvent('tabs.toggle-tab-bar'), },
 
    -- window --
@@ -251,6 +260,24 @@ local mouse_bindings = {
       event = { Up = { streak = 1, button = 'Left' } },
       mods = 'CTRL',
       action = act.OpenLinkAtMouseCursor,
+   },
+   -- Ctrl-scroll up to increase font size
+   {
+      event = { Down = { streak = 1, button = { WheelUp = 1 } } },
+      mods = 'CTRL',
+      action = act.IncreaseFontSize,
+   },
+   -- Ctrl-scroll down to decrease font size
+   {
+      event = { Down = { streak = 1, button = { WheelDown = 1 } } },
+      mods = 'CTRL',
+      action = act.DecreaseFontSize,
+   },
+   -- Ctrl-middle-click to reset font size
+   {
+      event = { Down = { streak = 1, button = 'Middle' } },
+      mods = 'CTRL',
+      action = act.ResetFontSize,
    },
 }
 

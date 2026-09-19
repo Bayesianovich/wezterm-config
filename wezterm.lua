@@ -11,7 +11,7 @@ require('events.right-status').setup({ date_format = '%a %H:%M:%S' })
 require('events.tab-title').setup({
    hide_active_tab_unseen = true,
    unseen_icon = 'numbered_box',
-   show_progress = true,
+   show_progress = false,
 })
 require('events.titlebar').setup()
 require('events.new-tab-button').setup()
