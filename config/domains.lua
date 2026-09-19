@@ -17,25 +17,18 @@ if platform.is_win then
          name = 'ssh:wsl',
          remote_address = 'localhost',
          multiplexing = 'None',
-         default_prog = { 'fish', '-l' },
+         default_prog = { 'zsh', '-l' },
          assume_shell = 'Posix',
       },
    }
 
    options.wsl_domains = {
       {
-         name = 'wsl:ubuntu-fish',
-         distribution = 'Ubuntu',
-         username = 'kevin',
-         default_cwd = '/home/kevin',
-         default_prog = { 'fish', '-l' },
-      },
-      {
-         name = 'wsl:ubuntu-bash',
-         distribution = 'Ubuntu',
-         username = 'kevin',
-         default_cwd = '/home/kevin',
-         default_prog = { 'bash', '-l' },
+         name = 'WSL:Ubuntu-22.04',
+         distribution = 'Ubuntu-22.04',
+         username = 'root',
+         default_cwd = '/root',
+         default_prog = { 'zsh', '-l' },
       },
    }
 end

@@ -14,7 +14,7 @@ elseif platform.is_win or platform.is_linux then
 end
 
 local secondary_tab_action = platform.is_win
-      and act.SpawnTab({ DomainName = 'wsl:ubuntu-fish' })
+      and act.SpawnTab({ DomainName = 'WSL:Ubuntu-22.04' })
    or act.SpawnCommandInNewTab({ args = { '/usr/bin/bash', '-l' } })
 
 -- stylua: ignore
