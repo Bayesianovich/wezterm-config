@@ -4,3 +4,6 @@
 /.luarocks
 .DS_Store
 .mcp.json
+
+# Keep Markdown documentation local only.
+*.md
